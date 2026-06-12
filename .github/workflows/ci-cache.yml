@@ -3,9 +3,6 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18, 20]
     
     steps:
       - uses: actions/checkout@v4
@@ -13,5 +10,6 @@ jobs:
         with :
           node-version: ${{matrix.node-version}}
           cache: npm
+      - run : npm ci
       - run : npm run lint
       - run : npm run test
