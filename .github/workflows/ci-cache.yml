@@ -3,7 +3,7 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
-    startegy:
+    strategy:
       matrix:
         node-version: [18,20]
     steps:
