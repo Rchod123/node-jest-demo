@@ -29,7 +29,8 @@ jobs:
           password: ${{secrets.DOCKER_TOKEN}}
       - uses: docker/build-push-action@v5
         with:
+          context: .
           push: true
-          tags: rajesh9700/myapp:latest,rajesh9700/myapp:${{github.sha}}
+          tags: ${{secrets.DOCKER_USERNAME}}/myapp:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
