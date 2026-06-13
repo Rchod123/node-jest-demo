@@ -30,4 +30,4 @@ jobs:
       - uses: docker/build-push-action@v5
         with:
           push: true
-          tags: user/myapp:latest,user/myapp:${{github.sha}}
+          tags: rajesh9700/myapp:latest,rajesh9700/myapp:${{github.sha}}
